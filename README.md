@@ -65,6 +65,7 @@ In this section, we summarize the information of popular HOI detection datasets.
 - [HICO-DET](http://www.umich.edu/∼ywchao/hico/)
 - [HCVRD](https://github.com/soeaver/awesome-human-parsing/blob/main/3-HP.md#33-Video-Human-Parsing-Models)
 - [HOI-A](https://github.com/soeaver/awesome-human-parsing/blob/main/3-HP.md#33-Video-Human-Parsing-Models)
+- [HAKE](http://www.umich.edu/∼ywchao/hico/)
 - [Ambiguous-HOI](https://github.com/soeaver/awesome-human-parsing/blob/main/3-HP.md#33-Video-Human-Parsing-Models)
 - [MECCANO](https://github.com/soeaver/awesome-human-parsing/blob/main/3-HP.md#33-Video-Human-Parsing-Models)
 - [HOI-VP](https://github.com/soeaver/awesome-human-parsing/blob/main/3-HP.md#33-Video-Human-Parsing-Models)
