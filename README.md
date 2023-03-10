@@ -32,7 +32,7 @@ Existing deep HOI detection methods follow a four-step pipeline, as shown in Fig
 <p align="center"><img width="90%" src="pics/fig_pipeline_all.png" /></p>
 
 Although the stage-based category is causing confusions for discussion and beginners, it has already become the mainstream category in more than a hundred papers. Therefore, this survey tries to just rename them but clearly demonstrate the essential differences between the different categories. Specifically, we rename them two-stage, one-stage, and end-to-end methods into instance feature-based methods, interaction-region-based methods, and query-based methods. The guideline for our category is how each type of method represents the interaction.
-<p align="center"><img width="90%" src="pics/fig_compare.png" /></p>
+<p align="center"><img width="60%" src="pics/fig_compare.png" /></p>
 
 Fig. 3 the development process of HOI detection methods and HOI-related datasets. For clarity, Fig. 3 only parts but not all existing methods. The listed HOI methods meet the following two conditions: (1) solve a typical HOI detection problem; (2) can be clearly classified into one of the proposed three categories.
 <p align="center"><img width="90%" src="pics/fig_all.png" /></p>
