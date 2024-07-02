@@ -46,7 +46,7 @@ Two-stage methods use the appearance of detected instances (either humans or obj
 <p align="center"><img width="90%" src="pics/fig_timeline_two.png" /></p>
 <p align="center"><img width="90%" src="pics/fig_table_two.png" /></p>
 
-- [ican](papers/8 iCAN Instance-Centric Attention Network for Human-Object Interaction Detection.pdf)
+- [ican](papers/8_iCAN_Instance-Centric_Attention_Network_for_Human-Object_Interaction_Detection.pdf)
 - [3.2 Multiple Human Parsing (MHP) Models](https://github.com/soeaver/awesome-human-parsing/blob/main/3-HP.md#32-Multiple-Human-Parsing-Models)
 - [3.3 Video Human Parsing (VHP) Models](https://github.com/soeaver/awesome-human-parsing/blob/main/3-HP.md#33-Video-Human-Parsing-Models)
 
