@@ -260,7 +260,7 @@ The indexes of all papers in the image are shown below, and the citation numbers
 ## Dataset
 In this section, we summarize the information of popular HOI detection datasets, as shown in table below. From 2015 to 2024, a total of 13 datasets for HOI detection emerged, including HICO, V-COCO, HICO-DET, HCVRD, HOI-A, HAKE, Ambiguous-HOI, HOI-VP, SWiG-HOI, BEHAVE, HAKE-HOI, HOI-SDC, and HOT.
 
-<p align="center"><img width="90%" src="pics/fig_table_dataset.png" /></p>
+<p align="center"><img width="90%" src="pics/fig_table_datasets.png" /></p>
 
 
 The indexes of all papers in the table are shown below, and the citation numbers at the beginning of the papers are the same as those in the table.
