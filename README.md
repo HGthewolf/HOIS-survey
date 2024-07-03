@@ -39,7 +39,7 @@ Existing deep HOI detection methods follow a common four-step pipeline, as shown
 
 Fig. 3 compares the structural differences among the three categories of methods. Nearly all methods utilize a CNN backbone to extract high-level image features, so Fig. 3 does not show it. Two-stage methods generally follow a sequential structure, while one-stage methods follow a parallel structure. However, some two-stage methods add a net stream to learn features from the global image, which leads to a
 hybrid structure. Therefore, we distinguish them by whether they predict an explicit region from the original image to represent the interaction verb or rely on the detected humanobject pair to predict the interaction. The transformer-based methods use FFNs to predict HOI triplets based on the latent features extracted by a transformer.
-<p align="center"><img width="90%" src="pics/fig_compare.png" /></p>
+<p align="center"><img width="60%" src="pics/fig_compare.png" /></p>
 
 Fig. 4 the development process of HOI detection methods. For clarity, Fig. 4 only parts but not all existing methods. The listed HOI methods meet the following two conditions: (1) solve a typical HOI detection problem; (2) can be clearly classified into one of the proposed three categories.
 <p align="center"><img width="90%" src="pics/fig_all.png" /></p>
