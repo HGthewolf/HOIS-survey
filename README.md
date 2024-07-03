@@ -50,7 +50,7 @@ Two-stage methods use the appearance of detected instances (either humans or obj
 <p align="center"><img width="90%" src="pics/fig_timeline_two.png" /></p>
 <p align="center"><img width="90%" src="pics/fig_table_two.png" /></p>
 
-- 73 HO-RCNN:Learning to detect human-object interactions[Paper](https://ieeexplore.ieee.org/abstract/document/8354152)
+- [73] HO-RCNN:Learning to detect human-object interactions[[Paper]](https://ieeexplore.ieee.org/abstract/document/8354152)
 - [27 ICAN](https://arxiv.org/abs/1808.10437)
 - [74 GPNN](https://openaccess.thecvf.com/content_ECCV_2018/html/Siyuan_Qi_Learning_Human-Object_Interactions_ECCV_2018_paper.html)
 - [32 InteractNet](https://openaccess.thecvf.com/content_cvpr_2018/html/Gkioxari_Detecting_and_Recognizing_CVPR_2018_paper.html)
