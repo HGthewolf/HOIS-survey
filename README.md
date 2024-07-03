@@ -1,7 +1,7 @@
 # A Survey of Human-object Interaction Detection with Deep Learning
 
 > [A Survey of Human-object Interaction Detection with Deep Learning]() <br>
-> [![paper](https://img.shields.io/badge/Paper-arxiv-b31b1b)](https://arxiv.org/pdf/2301.00394.pdf)
+> [![paper](A_Survey_of_Human-object_Interaction_Detection_with Deep_Learning.pdf)]
 
 If you find this repository helpful, please consider citing:
 
