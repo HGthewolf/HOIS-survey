@@ -51,8 +51,8 @@ Two-stage methods use the appearance of detected instances (either humans or obj
 <p align="center"><img width="90%" src="pics/fig_table_two.png" /></p>
 
 - [73 HO-RCNN](https://github.com/ywchao/ho-rcnn)
-- [27 ICAN](8_iCAN_Instance-Centric_Attention_Network_for_Human-Object_Interaction_Detection)
-- [74 GPNN](9.17_Learning_Human-Object_Interactions_by_Graph_Parsing_Neural_Networks)
+- [27 ICAN](https://github.com/vt-vl-lab/iCAN)
+- [74 GPNN][(9.17_Learning_Human-Object_Interactions_by_Graph_Parsing_Neural_Networks)](https://github.com/SiyuanQi-zz/gpnn)
 - [32 InteractNet](https://github.com/soeaver/awesome-human-parsing/blob/main/3-HP.md#33-Video-Human-Parsing-Models)
 - [95 Pairwise](https://github.com/soeaver/awesome-human-parsing/blob/main/3-HP.md#33-Video-Human-Parsing-Models)
 - [91 Context](https://github.com/soeaver/awesome-human-parsing/blob/main/3-HP.md#33-Video-Human-Parsing-Models)
