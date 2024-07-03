@@ -190,7 +190,7 @@ In this section, we summarize the information of popular HOI detection datasets.
 - [87 HOI-VP](https://link.springer.com/article/10.1007/s11263-021-01458-8)
 - [120 SWiG-HOI](https://openaccess.thecvf.com/content/ICCV2021/html/Wang_Discovering_Human_Interactions_With_Large-Vocabulary_Objects_via_Query_and_Multi-Scale_ICCV_2021_paper.html)
 - [171 BEHAVE](https://openaccess.thecvf.com/content/CVPR2022/html/Bhatnagar_BEHAVE_Dataset_and_Method_for_Tracking_Human_Object_Interactions_CVPR_2022_paper.html)
-- [172 HAKE-HOI](https://openaccess.thecvf.com/content_CVPR_2019/html/Li_Transferable_Interactiveness_Knowledge_for_Human-Object_Interaction_Detection_CVPR_2019_paper.html)
+- [172 HAKE-HOI](https://arxiv.org/pdf/2101.10292v1)
 - [124 HOI-SDC](https://ieeexplore.ieee.org/abstract/document/10315071)
 - [173 HOT](https://openaccess.thecvf.com/content/CVPR2023/html/Chen_Detecting_Human-Object_Contact_in_Images_CVPR_2023_paper.html)
 
