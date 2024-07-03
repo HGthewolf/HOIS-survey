@@ -51,11 +51,11 @@ Two-stage methods use the appearance of detected instances (either humans or obj
 <p align="center"><img width="90%" src="pics/fig_table_two.png" /></p>
 
 - [73] HO-RCNN:Learning to detect human-object interactions[[Paper]](https://ieeexplore.ieee.org/abstract/document/8354152)
-- [27] ICAN:[[Paper]](https://arxiv.org/abs/1808.10437)
-- [74] GPNN:[[Paper]](https://openaccess.thecvf.com/content_ECCV_2018/html/Siyuan_Qi_Learning_Human-Object_Interactions_ECCV_2018_paper.html)
-- [32] InteractNet:[[Paper]](https://openaccess.thecvf.com/content_cvpr_2018/html/Gkioxari_Detecting_and_Recognizing_CVPR_2018_paper.html)
-- [95] Pairwise:[[Paper]](https://openaccess.thecvf.com/content_ECCV_2018/html/Haoshu_Fang_Pairwise_Body-Part_Attention_ECCV_2018_paper.html)
-- [91] Context:[[Paper]](https://openaccess.thecvf.com/content_ICCV_2019/html/Wang_Deep_Contextual_Attention_for_Human-Object_Interaction_Detection_ICCV_2019_paper.html)
+- [27] ICAN:iCAN: Instance-Centric Attention Network for Human-Object Interaction Detection[[Paper]](https://arxiv.org/abs/1808.10437)
+- [74] GPNN:Learning human-object interactions by graph parsing neural networks[[Paper]](https://openaccess.thecvf.com/content_ECCV_2018/html/Siyuan_Qi_Learning_Human-Object_Interactions_ECCV_2018_paper.html)
+- [32] InteractNet:Detecting and recognizing human-object interactions[[Paper]](https://openaccess.thecvf.com/content_cvpr_2018/html/Gkioxari_Detecting_and_Recognizing_CVPR_2018_paper.html)
+- [95] Pairwise:Pairwise body-part attention for recognizing human-object interactions[[Paper]](https://openaccess.thecvf.com/content_ECCV_2018/html/Haoshu_Fang_Pairwise_Body-Part_Attention_ECCV_2018_paper.html)
+- [91] Context:Deep contextual attention for human-object interaction detection[[Paper]](https://openaccess.thecvf.com/content_ICCV_2019/html/Wang_Deep_Contextual_Attention_for_Human-Object_Interaction_Detection_ICCV_2019_paper.html)
 - [62] PMF-Net:[[Paper]](https://openaccess.thecvf.com/content_ICCV_2019/html/Wan_Pose-Aware_Multi-Level_Feature_Network_for_Human_Object_Interaction_Detection_ICCV_2019_paper.html)
 - [28] RPNN:[[Paper]](https://openaccess.thecvf.com/content_ICCV_2019/html/Zhou_Relation_Parsing_Neural_Network_for_Human-Object_Interaction_Detection_ICCV_2019_paper.html)
 - [85] BAR-CNN:[[Paper]](https://openaccess.thecvf.com/content_ICCVW_2019/html/SGRL/Kolesnikov_Detecting_Visual_Relationships_Using_Box_Attention_ICCVW_2019_paper.html?ref=https://githubhelp.com)
