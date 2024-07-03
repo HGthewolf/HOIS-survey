@@ -80,7 +80,7 @@ Two-stage methods use the appearance of detected instances (either humans or obj
 - [93] Actor-centric:Effective actor-centric human-object interaction detection[[Paper]](https://www.sciencedirect.com/science/article/pii/S0262885622000518)
 - [109] SGCN4HOI:A skeleton-aware graph convolutional network for human-object interaction detection[[Paper]](https://ieeexplore.ieee.org/abstract/document/9945149)
 - [88] SDT:Distance matters in human-object interaction detection[[Paper]](https://dl.acm.org/doi/abs/10.1145/3503161.3547793)
-- [97] Cross-Person Cues:[[Paper]](https://link.springer.com/chapter/10.1007/978-3-031-19772-7_8)
+- [97] Cross-Person Cues:Mining cross-person cues for body-part interactiveness learning in hoi detection[[Paper]](https://link.springer.com/chapter/10.1007/978-3-031-19772-7_8)
 - [90] PPDM++:Mining cross-person cues for body-part interactiveness learning in hoi detection[[Paper]](https://ieeexplore.ieee.org/abstract/document/10496247)
 - [94] GFIN:Human–object interaction detection via global context and pairwise-level fusion features integration[[Paper]](https://www.sciencedirect.com/science/article/pii/S0893608023006251)
 
@@ -131,7 +131,7 @@ Transformer-based methods use trainable query vectors to represent HOI triplets.
 - [125] RMRQ:Region mining and refined query improved hoi detection in transformer[[Paper]](https://ieeexplore.ieee.org/abstract/document/10516691/)
 - [136] LOGICHOI:Neural-logic human-object interaction detection[[Paper]](https://proceedings.neurips.cc/paper_files/paper/2023/hash/42b7c2f6d320d1fe1afa899a6319d6d7-Abstract-Conference.html)
 - [135] CMST:Human-object interaction detection based on cascade multi-scale transformer[[Paper]](https://link.springer.com/article/10.1007/s10489-024-05324-1)
-- [134] TED-Net:Ted-net: Dispersal attention for perceiving interaction region in indirectly-contact hoi detection[[Paper]](https://ieeexplore.ieee.org/abstract/document/10415065)
+- [134] TED-Net:Ted-net: Dispersal attention for perceiving interaction region in indirectly-contact hoi detection[[Paper]](https://ieeexplore.ieee.org/abstract/document/10415065)
 
 ## 6. Foundation models methods
 The ``Foundation Models" concept is first defined in the article ``On the Opportunities and Risks of Foundation Models" in 2021. Over 200 pages of text, Rishi Bommasani et al. provide a comprehensive introduction to the opportunities and risks of the foundation models, from their capabilities and technical principles to their applications and social impact. Foundation models are defined as an emerging paradigm for building AI systems based on a general class of models. A foundation model generally uses large-scale self-supervision so that it can be adapted to a wide range of downstream tasks. The current examples include BERT, GPT-3 InstructGPT, GPT-4, BLIP-2 and CLIP. The foundation models have multiple capabilities, such as language, vision, reasoning, interaction, and understanding, which shows that they have the potential to change the pattern of existing industries and expand the influence of AI in society.
