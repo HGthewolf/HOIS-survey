@@ -50,7 +50,7 @@ Two-stage methods use the appearance of detected instances (either humans or obj
 <p align="center"><img width="90%" src="pics/fig_timeline_two.png" /></p>
 <p align="center"><img width="90%" src="pics/fig_table_two.png" /></p>
 
-- [73 HO-RCNN](papers/7.4_learning_to_detect_hoi.pdf)
+- [73 HO-RCNN](https://github.com/ywchao/ho-rcnn)
 - [27 ICAN](8_iCAN_Instance-Centric_Attention_Network_for_Human-Object_Interaction_Detection)
 - [74 GPNN](9.17_Learning_Human-Object_Interactions_by_Graph_Parsing_Neural_Networks)
 - [32 InteractNet](https://github.com/soeaver/awesome-human-parsing/blob/main/3-HP.md#33-Video-Human-Parsing-Models)
@@ -174,7 +174,7 @@ We introduce the foundation models because, in the past two years, researchers h
 - [178 CMD-SE](https://github.com/soeaver/awesome-human-parsing/blob/main/3-HP.md#33-Video-Human-Parsing-Models)
 - [179 KI2HOI](https://github.com/soeaver/awesome-human-parsing/blob/main/3-HP.md#33-Video-Human-Parsing-Models)
 
-## 7. Dataset, metrics and performance
+## 7. Dataset
 In this section, we summarize the information of popular HOI detection datasets. From 2015 to 2024, a total of 13 datasets for HOI detection emerged, including HICO, V-COCO, HICO-DET, HCVRD, HOI-A, HAKE, Ambiguous-HOI, HOI-VP, SWiG-HOI, BEHAVE, HAKE-HOI, HOI-SDC, and HOT.
 <p align="center"><img width="90%" src="pics/fig_table_dataset.png" /></p>
 
