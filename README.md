@@ -14,7 +14,7 @@ If you find this repository helpful, please consider citing:
 }
 ```
 
-
+---
 ## Contributing 
 
 Compared with the currently published HOI detection review papers, our contributions can be summarized as follows:
@@ -25,10 +25,22 @@ Compared with the currently published HOI detection review papers, our contribut
 
 (3) Based on the analyzed papers, we reasonably deduce and explore future research directions, analyze the current problems and limitations of each research direction, and propose our suggestions to solve these problems.
 
+---
+## Overview
+
+  - [Introduction](#1. Introduction)
+  - [Reasoning](#reasoning)
+  - [Planning](#planning)
+  - [Manipulation](#manipulation)
+  - [Instructions and Navigation](#instructions-and-navigation)
+  - [Simulation Frameworks](#simulation-frameworks)
+  - [Citation](#citation)
+
+---
 ## 1. Introduction
 Human-object interaction (HOI) detection has attracted significant attention due to its wide applications, including human-robot interactions, security monitoring, automatic sports commentary, etc. HOI detection aims to detect humans, objects, and their interactions in a given image or video, so it needs a higher-level semantic understanding of the image than regular object recognition or detection tasks. It is also more challenging technically because of some unique difficulties, such as multi-object interactions, long-tail distribution of interaction categories, etc. Currently, deep learning methods have achieved great performance in HOI detection, but there are few reviews describing the recent advance of deep learning-based HOI detection. Moreover, the current stage-based category of HOI detection methods is causing confusion in community discussion and beginner learning. To fill this gap, this paper summarizes, categorizes, and compares methods using deep learning for HOI detection over the last nine years. Firstly, we summarize the pipeline of HOI detection methods. Then, we divide existing methods into three categories (two-stage, one-stage, and transformer-based), distinguish them in formulas and schematics, and qualitatively compare their advantages and disadvantages. After that, we review each category of methods in detail, focusing on HOI detection methods for images. Moreover, we explore the development process of using foundation models for HOI detection. We also quantitatively compare the performance of existing methods on public HOI datasets. At last, we point out the future research direction of HOI detection.
 
-
+---
 ## 2.  Overview of HOI detection
 
 Deep learning methods have achieved brilliant achievements in object recognition and detection, which greatly reduce manual labor in processing mass visual information. Object recognition aims to answer ``What is in the image", while object detection aims to answer ``What and where is in the image". However, an expected intelligent machine should have a complete semantics understanding of an scene. Towards this goal, human-object interaction (HOI) detection are proposed to answer ``What are the people doing with what objects?". Fig. 1 gives two examples to show the different goals between object recognition, object detection and HOI detection. From which we can see, HOI detection can provide more human-centered information in the semantics level. Therefore, HOI detection has plenty of application potential in human-robot interactions, security monitoring, automatic sport commentary, action simulation and recognition, etc. At the same time, HOI detection plays a crucial role in the embodied AI system, which thinks that human intelligence needs to be formed through interaction and iteration with actual scenes. 
@@ -70,6 +82,7 @@ From Fig. 4, we can find the following development trends:
 
 (4) After the large-scale visual language pre-training foundation model CLIP is established, the mainstream research direction to solve the long-tail distribution problem began to shift to CLIP-based HOI detection.
 
+---
 ## 3. Two-stage methods
 Two-stage methods use the appearance of detected instances (either humans or objects) as cues to predict the interaction between them. Therefore, the two-stage methods generally consist of two sequential steps: instance detection and interaction classification. In the first stage, they use an object detector, such as a Faster RCNN, to detect the human and object instances. The output of the first stage includes the labels, bounding box, and in-box features of the detected instances. In the second stage, they use features in the detected box to identify the interaction between each possible human-object pair. Note that the weights of the first-stage detector can be either fixed or updated during training.
 
@@ -118,7 +131,7 @@ The indexes of all papers in the image are shown below, and the citation numbers
 - [90] PPDM++:Mining cross-person cues for body-part interactiveness learning in hoi detection[[Paper]](https://ieeexplore.ieee.org/abstract/document/10496247)
 - [94] GFIN:Human–object interaction detection via global context and pairwise-level fusion features integration[[Paper]](https://www.sciencedirect.com/science/article/pii/S0893608023006251)
 
-
+---
 ## 4. One-stage methods
 One-stage methods aim to regress a region to represent the interaction. The interaction region could be a point, dynamic points, a union box or multi-scale boxes. In other words, these methods simultaneously detect human instances, object instances, and some interaction areas or points, where the interaction areas are only used to predict interaction verbs.
 
@@ -137,6 +150,7 @@ The indexes of all papers in the image are shown below, and the citation numbers
 - [35] GG-Net:Glance and gaze: Inferring action-aware points for one-stage human-object interaction detection[[Paper]](https://openaccess.thecvf.com/content/CVPR2021/html/Zhong_Glance_and_Gaze_Inferring_Action-Aware_Points_for_One-Stage_Human-Object_Interaction_CVPR_2021_paper.html)
 - [111] DIRV:Dirv: Dense interaction region voting for end-to-end human-object interaction detection[[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/16217)
 
+---
 ## 5. Transformer-based methods
 Transformer-based methods use trainable query vectors to represent HOI triplets. Their basic architecture is a transformer encoder-decoder. The encoder uses an attention mechanism to extract features from the global image context. The decoder takes several learnable query vectors as input, and each query captures at most one interaction action of a human-object pair. Actually, these methods just extend the transformer-based detection model DETR to capture HOI detection and treat HOI detection as a set prediction problem of matching the predicted and ground-truth HOI instances.
 
@@ -184,6 +198,7 @@ The indexes of all papers in the image are shown below, and the citation numbers
 - [135] CMST:Human-object interaction detection based on cascade multi-scale transformer[[Paper]](https://link.springer.com/article/10.1007/s10489-024-05324-1)
 - [134] TED-Net:Ted-net: Dispersal attention for perceiving interaction region in indirectly-contact hoi detection[[Paper]](https://ieeexplore.ieee.org/abstract/document/10415065)
 
+---
 ## 6. Foundation models methods
 The ``Foundation Models" concept is first defined in the article ``On the Opportunities and Risks of Foundation Models" in 2021. Over 200 pages of text, Rishi Bommasani et al. provide a comprehensive introduction to the opportunities and risks of the foundation models, from their capabilities and technical principles to their applications and social impact. Foundation models are defined as an emerging paradigm for building AI systems based on a general class of models. A foundation model generally uses large-scale self-supervision so that it can be adapted to a wide range of downstream tasks. The current examples include BERT, GPT-3 InstructGPT, GPT-4, BLIP-2 and CLIP. The foundation models have multiple capabilities, such as language, vision, reasoning, interaction, and understanding, which shows that they have the potential to change the pattern of existing industries and expand the influence of AI in society.
 
@@ -240,6 +255,7 @@ The indexes of all papers in the image are shown below, and the citation numbers
 - [178] CMD-SE:Exploring the potential of large foundation models for open-vocabulary hoi detection[[Paper]](https://openaccess.thecvf.com/content/CVPR2024/html/Lei_Exploring_the_Potential_of_Large_Foundation_Models_for_Open-Vocabulary_HOI_CVPR_2024_paper.html)
 - [179] KI2HOI:Towards zero-shot human-object interaction detection via vision-language integration[[Paper]](https://arxiv.org/abs/2403.07246)
 
+---
 ## 7. Dataset
 In this section, we summarize the information of popular HOI detection datasets, as shown in table below. From 2015 to 2024, a total of 13 datasets for HOI detection emerged, including HICO, V-COCO, HICO-DET, HCVRD, HOI-A, HAKE, Ambiguous-HOI, HOI-VP, SWiG-HOI, BEHAVE, HAKE-HOI, HOI-SDC, and HOT.
 
@@ -262,6 +278,7 @@ The indexes of all papers in the table are shown below, and the citation numbers
 - [124] HOI-SDC:Fgahoi: Fine-grained anchors for human-object interaction detection[[Paper]](https://ieeexplore.ieee.org/abstract/document/10315071)
 - [173] HOT:Detecting human-object contact in images[[Paper]](https://openaccess.thecvf.com/content/CVPR2023/html/Chen_Detecting_Human-Object_Contact_in_Images_CVPR_2023_paper.html)
 
+---
 ## 8.  Future Directions
 Deep learning-based HOI detection methods are still in development, and there are many difficulties that need to be explored and solved. Future research can be carried out from the following aspects.
 
