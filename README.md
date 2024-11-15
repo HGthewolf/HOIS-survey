@@ -28,56 +28,15 @@ Compared with the currently published HOI detection review papers, our contribut
 ---
 ## Overview of HOI detection
 
-Deep learning methods have achieved brilliant achievements in object recognition and detection, which greatly reduce manual labor in processing mass visual information. Object recognition aims to answer "What is in the image", while object detection aims to answer "What and where is in the image". However, an expected intelligent machine should have a complete semantics understanding of an scene. Towards this goal, human-object interaction (HOI) detection are proposed to answer ``What are the people doing with what objects?". Fig. 1 gives two examples to show the different goals between object recognition, object detection and HOI detection. From which we can see, HOI detection can provide more human-centered information in the semantics level. Therefore, HOI detection has plenty of application potential in human-robot interactions, security monitoring, automatic sport commentary, action simulation and recognition, etc. At the same time, HOI detection plays a crucial role in the embodied AI system, which thinks that human intelligence needs to be formed through interaction and iteration with actual scenes. 
-<p align="center"><img width="90%" src="pics/fig_diff2.png" /></p>
-
-However, HOI is a challenging visual task since it not only suffers from the common difficulties of machine vision. It also has to face some unique challenges:
-
-(1) Multi-object interactions. In a complex interaction scene, there may be multiple people performing interactions at the same time, one person interacting with multiple objects, and one object interacting with multiple people, such as a crowded party that involves various objects and interactions. Even if all objects and humans could be detected, assembling them into reasonable HOI triplets is still challenging.
-
-(2) Long-tail distribution of interaction categories. Sample imbalance is particularly serious in HOI datasets. In some datasets, the number of instance samples between different categories is unbalanced. Specifically, the number of common interaction samples can be tens or even hundreds of times that of uncommon interactions. This leads to the unreliable accuracy of the model after training due to overfitting, underfitting, and other problems.
-
-(3) Visual distraction under real-world settings. Visual distraction is serious in HOI detection. In order to detect HOI, the model must identify objects. However, there are many interference factors in the natural environment, including occlusion, deformation, lighting changes, background clutter, shooting perspective, etc. This makes HOI detection challenging.
-
-Existing deep HOI detection methods follow a common four-step pipeline, as shown in Fig.2. Firstly, the model takes an image as the main input. We aim to find out all the HOIs in the image. In addition to visual information, human body model has been used as prior knowledge to improve results. Text corpus has also been used as external clues to detect unseen objects or actions. Secondly, HOI detection methods utilize some off-the-shelf backbone networks to extract features from inputs. For example, ResNet, EfficientNet, ImageNet are used to extract visual features; Hourglass, Openpose are used to estimate the human pose; GloVe, FastText, Word2Vec are used to generate semantic embedding vectors of objects or verbs. Generally, these backbone networks have been pre-trained on large-scale datasets, and their weights are frozen during HOI detection training. An excellent pre-training method can affect the final detection accuracy. Thirdly, the HOI predictor further learns HOI-specific features and then predicts the HOI triplets. The HOI predictor is the core of HOI algorithms, which could be based on various structures, such as CNN, LSTM, GCN, Transformer, etc. Finally, HOI detection model outputs the $\langle$human-verb-object$\rangle$ triplets existed in the image. 
+Existing deep HOI detection methods follow a common four-step pipeline, as shown in Fig.1. Firstly, the model takes an image as the main input. Secondly, HOI detection methods utilize some off-the-shelf backbone networks to extract features from inputs. Thirdly, the HOI predictor further learns HOI-specific features and then predicts the HOI triplets. Finally, HOI detection model outputs the $\langle$human-verb-object$\rangle$ triplets existed in the image. 
 <p align="center"><img width="90%" src="pics/fig_pipeline_all.png" /></p>
 
-Fig. 3 compares the structural differences among the three categories of methods. Nearly all methods utilize a CNN backbone to extract high-level image features, so Fig. 3 does not show it. Two-stage methods generally follow a sequential structure, while one-stage methods follow a parallel structure. However, some two-stage methods add a net stream to learn features from the global image, which leads to a
-hybrid structure. Therefore, we distinguish them by whether they predict an explicit region from the original image to represent the interaction verb or rely on the detected human-object pair to predict the interaction. The transformer-based methods use FFNs to predict HOI triplets based on the latent features extracted by a transformer.
-<p align="center"><img width="60%" src="pics/fig_compare.png" /></p>
-
-The three types of methods have their own advantages and disadvantages:
-
-(1) Two-stage methods can effectively use the information in the picture, but they have the problem of low time efficiency and high computational complexity. They can effectively use the features of instance and additional information from context, body posture, and other aspects to carry out interaction classification. However, due to the separate architecture, detection algorithms require a lot of time to predict each possible human-object pair individually.
-
-(2) One-stage methods have better time efficiency, but they are difficult to quickly deploy to complex environments. They can detect HOI triples directly from the image due to the one-stage object detector and parallel structure, so they have an obvious improvement in real-time performance. Although the efficiency has been greatly improved, the performance of the existing methods is limited by the complex handcrafted grouping strategies, which makes it difficult to quickly deploy it to complex or special real-world environments.
-
-(3) Transformer-based methods are currently the best method in terms of real-time performance and accuracy, but they lack interpretability. They can apply transformers with a good ability to capture remote dependencies. They can combine the advantages of one-stage methods and transformers to separately predict human-object proposals and interactions with multiple parallel decoders without requiring complex grouping strategies. This makes them the most studied method in the last two years. However, they lack interpretability and cannot easily configure parameters to fine-tune performance.
-
-Fig. 4 the development process of HOI detection methods. For clarity, Fig. 4 only parts but not all existing methods. The listed HOI methods meet the following two conditions: (1) solve a typical HOI detection problem; (2) can be clearly classified into one of the proposed three categories.
+Fig. 2 the development process of HOI detection methods. 
 <p align="center"><img width="90%" src="pics/fig_all.png" /></p>
-
-From Fig. 4, we can find the following development trends:
-
-(1) The multi-stream architecture mainly used in the two-stage methods is proposed by HO-RCNN. Later, attention mechanism and graph neural network are introduced into the field of HOI detection, further enriching the diversity of the two-stage methods and the detection accuracy.
-
-(2) The generation of the one-stage methods benefits from the development of the one-stage object detector. PPDM is the first HOI detection method to achieve real-time performance, which has greatly improved the detection efficiency and accuracy compared with other methods in the same period.
-
-(3) For transformer-based methods, DETR is one of the most advanced visual object detection methods. Most of the current transformer-based methods follow the structure of DETR and are further optimized based on DETR to improve the detection effect. At the same time, after the emergence of DETR, since it has greatly improved the real-time performance and accuracy of HOI detection, the two-stage methods and one-stage methods that do not use transformers have been greatly reduced, and many researchers have begun to pay attention to transformer-based methods.
-
-(4) After the large-scale visual language pre-training foundation model CLIP is established, the mainstream research direction to solve the long-tail distribution problem began to shift to CLIP-based HOI detection.
 
 ---
 ## Two-stage methods
-Two-stage methods use the appearance of detected instances (either humans or objects) as cues to predict the interaction between them. Therefore, the two-stage methods generally consist of two sequential steps: instance detection and interaction classification. In the first stage, they use an object detector, such as a Faster RCNN, to detect the human and object instances. The output of the first stage includes the labels, bounding box, and in-box features of the detected instances. In the second stage, they use features in the detected box to identify the interaction between each possible human-object pair. Note that the weights of the first-stage detector can be either fixed or updated during training.
 
-The human-object region-based convolutional neural networks (HO-RCNN) proposed by Chao et al. in 2018 is known as the beginning of the two-stage methods. The multi-stream architecture proposed by them is of great significance for HOI detection research. Before the emergence of the transformer, almost all two-stage methods used multi-stream architecture as their structural framework. The multi-stream architecture includes human stream, object stream, and pairwise stream, as shown below. Among them, the human stream and object stream encode the appearance features of humans and objects, respectively, while the purpose of the pairwise stream is to encode the spatial relationship between humans and objects. The model first generates human-object region pair proposals using humans and object detectors. Then, it feeds each human-object pair proposal into a deep neural network (DNN) to generate HOI classification scores, and the scores in the three streams are fused in a later fusion manner. Finally, the interaction classification is performed according to the fusion scores. Due to the outstanding performance of the attention mechanism and GNN in many aspects, such as feature extraction and object detection, researchers have begun to try to incorporate attention and GNN into the structural components of HOI detection, thereby improving detection accuracy.
-
-The process of the two-stage methods divides the HOI detection task into two subtasks: instance detection and interaction classification. Generally, by sorting out relevant literature on HOI detection, we can divide the two-stage methods into two categories based on the model and overall framework of interaction classification: methods based on attention mechanism and methods based on graph neural networks (GNN).
-
-<p align="center"><img width="90%" src="pics/fig_horcnn.png" /></p>
-The timeline of two-stage methods is shown below.
-<p align="center"><img width="90%" src="pics/fig_timeline_two.png" /></p>
 The test results of the two-stage methods on the V-COCO and HICO-DET datasets are presented below.
 <p align="center"><img width="90%" src="pics/fig_table_two.png" /></p>
 The indexes of all papers in the image are shown below, and the citation numbers at the beginning of the papers are the same as those in the image.
@@ -118,13 +77,7 @@ The indexes of all papers in the image are shown below, and the citation numbers
 
 ---
 ## One-stage methods
-One-stage methods aim to regress a region to represent the interaction. The interaction region could be a point, dynamic points, a union box or multi-scale boxes. In other words, these methods simultaneously detect human instances, object instances, and some interaction areas or points, where the interaction areas are only used to predict interaction verbs.
 
-The common framework of the one-stage methods is shown below. Due to the need to detect humans and objects first and then perform matching and interaction classification, the two-stage methods consume more computing resources and lack flexibility. At the same time, affected by its serial structure, the detection efficiency and real-time performance of the two-stage methods are also flawed. With the development
-of one-stage object detectors, scholars have studied more and more one-stage methods. As mentioned above, one-stage methods can reduce HOI detection as a parallel detection problem, detecting HOI triples directly from images. Therefore, compared with the two-stage methods, they have further improved detection efficiency, real-time performance, and accuracy.
-<p align="center"><img width="90%" src="pics/fig_pipeline_one.png" /></p>
-The timeline of one-stage methods is shown below.
-<p align="center"><img width="90%" src="pics/fig_timeline_one.png" /></p>
 The test results of the one-stage methods on the V-COCO and HICO-DET datasets are presented below.
 <p align="center"><img width="90%" src="pics/fig_table_one.png" /></p>
 The indexes of all papers in the image are shown below, and the citation numbers at the beginning of the papers are the same as those in the image.
@@ -137,18 +90,7 @@ The indexes of all papers in the image are shown below, and the citation numbers
 
 ---
 ## Transformer-based methods
-Transformer-based methods use trainable query vectors to represent HOI triplets. Their basic architecture is a transformer encoder-decoder. The encoder uses an attention mechanism to extract features from the global image context. The decoder takes several learnable query vectors as input, and each query captures at most one interaction action of a human-object pair. Actually, these methods just extend the transformer-based detection model DETR to capture HOI detection and treat HOI detection as a set prediction problem of matching the predicted and ground-truth HOI instances.
 
-The transformer is first proposed as a novel attention model for NLP. It follows an encoder-decoder structure, which takes a sequence as input and generates an output sequence. Either encoder or decoder contains stacked self-attention layers and position-wise feed-forward layers. Since its self-attention layer uses a multi-head attention mechanism to scan through all elements in the input sequence, the transformer can jointly attend to information from the whole sequence. The transformer’s advantages of global computing and perfect memory make it popular in the machine-learning community. 
-
-DETR is one of the most advanced transformer-based visual object detection methods, which views object detection as a direct set prediction problem. It consists of a transformer to generate a set of object predictions and a set-based loss that forces correct matching between predictions and the ground-truth objects. The main advantage of DETR is eliminating the need for many hand-designed components. The tremendous success of DETR has led researchers to investigate its adaptation to HOI detection. For example, HQM can enhance DETR’s robustness and improve detection accuracy by mining hard-positive queries.
-
-At present, most transformer-based HOI methods follow DETR’s pipeline. Their common framework is shown below, which first uses a CNN backbone to extract preliminary visual features from the input image. Then, the 2D feature map is supplemented with a positional encoding and flattened into a 1D sequence. After that, a transformer encoder-decoder architecture further extracts HOI-specific features, where the decoder additionally takes a fixed number of learnable HOI queries as input. Finally, the subsequent feed-forward networks (FFN) process the output of the decoder to generate n HOI prediction results. 
-
-<p align="center"><img width="90%" src="pics/fig_pipeline_trans.png" /></p>
-
-The timeline of transformer-based methods is shown below.
-<p align="center"><img width="90%" src="pics/fig_timeline_trans.png" /></p>
 The test results of the transformer-based methods on the V-COCO and HICO-DET datasets are presented below.
 <p align="center"><img width="90%" src="pics/fig_table_trans.png" /></p>
 The indexes of all papers in the image are shown below, and the citation numbers at the beginning of the papers are the same as those in the image.
@@ -185,22 +127,13 @@ The indexes of all papers in the image are shown below, and the citation numbers
 
 ---
 ## Foundation models methods
-The "Foundation Models" concept is first defined in the article "On the Opportunities and Risks of Foundation Models" in 2021. Over 200 pages of text, Rishi Bommasani et al. provide a comprehensive introduction to the opportunities and risks of the foundation models, from their capabilities and technical principles to their applications and social impact. Foundation models are defined as an emerging paradigm for building AI systems based on a general class of models. A foundation model generally uses large-scale self-supervision so that it can be adapted to a wide range of downstream tasks. The current examples include BERT, GPT-3 InstructGPT, GPT-4, BLIP-2 and CLIP. The foundation models have multiple capabilities, such as language, vision, reasoning, interaction, and understanding, which shows that they have the potential to change the pattern of existing industries and expand the influence of AI in society.
-
-We introduce the foundation models because, in the past two years, researchers have discovered that the foundation models can be used to solve the long-tail distribution problem in HOI detection. The long-tail distribution problem refers to overfitting, underfitting, and other problems caused by an imbalance in the number of instance samples between different categories in certain datasets. Since 2018, some scholars have begun to notice the seriousness of this problem. 
-
-Before the foundation models methoods appear, most current methods can be divided into three categories:zero-shot/few-shot learning, compositional learning, and weakly-supervised learning. Since the large-scale visual language pre-training foundation model CLIP is proposed in 2021, some studies have gradually focused on CLIP-based HOI detection research.
 
 LLM (large language models) has rich semantic knowledge. It acquires a lot of language knowledge through pre-training and provides text descriptions for HOI detection, which helps to understand the semantics of the interaction. GPT has strong zero-shot and few-shot learning capabilities. It can learn and reason without or with only a small amount of specific data, which is particularly important for solving the long-tail distribution problems. At the same time, GPT also has generative capabilities and can generate natural language descriptions to enhance the understanding of interactions. 
 
 VLM (visual language models), such as BLIP-2 and CLIP, has strong cross-modal learning capabilities and can process visual and language information at the same time. This helps to combine visual features and natural language descriptions in HOI detection, which improves detection accuracy. At the same time, for open vocabulary HOI detection, the VLM model can use natural language descriptions to identify new and unseen interaction relationships, thereby expanding the detection capabilities.
 
-The combination of LLM and VLM can provide richer interpretability and higher accuracy for HOI detection. It can not only intuitively display the interaction relationship, but also perform well in dealing with complex scenes and rare interaction relationships, and is better than the first three methods in dealing with the long-tail distribution problems.
+The combination of LLM and VLM can provide richer interpretability and higher accuracy for HOI detection. It can not only intuitively display the interaction relationship, but also perform well in dealing with complex scenes and rare interaction relationships, and is better than zero-shot/few-shot learning, compositional learning, and weakly-supervised learning methods in dealing with the long-tail distribution problems.
 
-In summary, the foundation model has rich semantic knowledge, strong zero-shot and few-shot learning capabilities, generative capabilities, cross-modal learning capabilities, richer interpretability, and higher accuracy. Observing the timeline of foundation models methods shown below, we can find that after 2022, there are more and more methods using the foundation model to solve long-tail distribution problems, which reflects the impact and potential of the foundation model on HOI detection.
-
-The timeline of foundation models methods is shown below.
-<p align="center"><img width="90%" src="pics/fig_timeline_foundation.png" /></p>
 The test results of the foundation model methods on the V-COCO and HICO-DET datasets are presented below.
 <p align="center"><img width="90%" src="pics/fig_table_foundation.png" /></p>
 The indexes of all papers in the image are shown below, and the citation numbers at the beginning of the papers are the same as those in the image.
