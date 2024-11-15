@@ -28,18 +28,16 @@ Compared with the currently published HOI detection review papers, our contribut
 ---
 ## Overview of HOI detection
 
-Existing deep HOI detection methods follow a common four-step pipeline, as shown in Fig.1. Firstly, the model takes an image as the main input. Secondly, HOI detection methods utilize some off-the-shelf backbone networks to extract features from inputs. Thirdly, the HOI predictor further learns HOI-specific features and then predicts the HOI triplets. Finally, HOI detection model outputs the $\langle$human-verb-object$\rangle$ triplets existed in the image. 
+Existing deep HOI detection methods follow a common four-step pipeline, as shown in Fig.1. Firstly, the model takes an image as the main input. Secondly, HOI detection methods utilize some off-the-shelf backbone networks to extract features from inputs. Thirdly, the HOI predictor further learns HOI-specific features and then predicts the HOI triplets. Finally, HOI detection model outputs the human-verb-object triplets existed in the image. 
 <p align="center"><img width="90%" src="pics/fig_pipeline_all.png" /></p>
+Fig. 1 Pipeline of HOI detection using deep learning methods.
 
-Fig. 2 the development process of HOI detection methods. 
 <p align="center"><img width="90%" src="pics/fig_all.png" /></p>
+Fig. 2 The development process of HOI detection methods. 
 
 ---
-## Two-stage methods
-
-The test results of the two-stage methods on the V-COCO and HICO-DET datasets are presented below.
-<p align="center"><img width="90%" src="pics/fig_table_two.png" /></p>
-The indexes of all papers in the image are shown below, and the citation numbers at the beginning of the papers are the same as those in the image.
+<details>
+<summary>## Two-stage methods</summary>
 
 - [73] HO-RCNN:Learning to detect human-object interactions[[Paper]](https://ieeexplore.ieee.org/abstract/document/8354152)
 - [27] ICAN:iCAN: Instance-Centric Attention Network for Human-Object Interaction Detection[[Paper]](https://arxiv.org/abs/1808.10437)
@@ -74,26 +72,21 @@ The indexes of all papers in the image are shown below, and the citation numbers
 - [97] Cross-Person Cues:Mining cross-person cues for body-part interactiveness learning in hoi detection[[Paper]](https://link.springer.com/chapter/10.1007/978-3-031-19772-7_8)
 - [90] PPDM++:Mining cross-person cues for body-part interactiveness learning in hoi detection[[Paper]](https://ieeexplore.ieee.org/abstract/document/10496247)
 - [94] GFIN:Human–object interaction detection via global context and pairwise-level fusion features integration[[Paper]](https://www.sciencedirect.com/science/article/pii/S0893608023006251)
-
+</details>
 ---
-## One-stage methods
-
-The test results of the one-stage methods on the V-COCO and HICO-DET datasets are presented below.
-<p align="center"><img width="90%" src="pics/fig_table_one.png" /></p>
-The indexes of all papers in the image are shown below, and the citation numbers at the beginning of the papers are the same as those in the image.
+<details>
+<summary>## One-stage methods</summary>
 
 - [33] PPDM:Ppdm: Parallel point detection and matching for real-time human-object interaction detection[[Paper]](https://openaccess.thecvf.com/content_CVPR_2020/html/Liao_PPDM_Parallel_Point_Detection_and_Matching_for_Real-Time_Human-Object_Interaction_CVPR_2020_paper.html)
 - [34] IP-Net:Learning human-object interaction detection using interaction points[[Paper]](https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_Learning_Human-Object_Interaction_Detection_Using_Interaction_Points_CVPR_2020_paper.html)
 - [36] UnionDet:Uniondet: Union-level detector towards real-time human-object interaction detection[[Paper]](https://link.springer.com/chapter/10.1007/978-3-030-58555-6_30)
 - [35] GG-Net:Glance and gaze: Inferring action-aware points for one-stage human-object interaction detection[[Paper]](https://openaccess.thecvf.com/content/CVPR2021/html/Zhong_Glance_and_Gaze_Inferring_Action-Aware_Points_for_One-Stage_Human-Object_Interaction_CVPR_2021_paper.html)
 - [111] DIRV:Dirv: Dense interaction region voting for end-to-end human-object interaction detection[[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/16217)
-
+</details>
 ---
-## Transformer-based methods
 
-The test results of the transformer-based methods on the V-COCO and HICO-DET datasets are presented below.
-<p align="center"><img width="90%" src="pics/fig_table_trans.png" /></p>
-The indexes of all papers in the image are shown below, and the citation numbers at the beginning of the papers are the same as those in the image.
+<details>
+<summary>## Transformer-based methods</summary>
 
 - [37] HOI-Trans:End-to-end human object interaction detection with hoi transformer[[Paper]](https://openaccess.thecvf.com/content/CVPR2021/html/Zou_End-to-End_Human_Object_Interaction_Detection_With_HOI_Transformer_CVPR_2021_paper.html)
 - [38] QPIC:Qpic: Query-based pairwise human-object interaction detection with image-wide contextual information[[Paper]](https://openaccess.thecvf.com/content/CVPR2021/html/Tamura_QPIC_Query-Based_Pairwise_Human-Object_Interaction_Detection_With_Image-Wide_Contextual_Information_CVPR_2021_paper.html)
@@ -124,9 +117,11 @@ The indexes of all papers in the image are shown below, and the citation numbers
 - [136] LOGICHOI:Neural-logic human-object interaction detection[[Paper]](https://proceedings.neurips.cc/paper_files/paper/2023/hash/42b7c2f6d320d1fe1afa899a6319d6d7-Abstract-Conference.html)
 - [135] CMST:Human-object interaction detection based on cascade multi-scale transformer[[Paper]](https://link.springer.com/article/10.1007/s10489-024-05324-1)
 - [134] TED-Net:Ted-net: Dispersal attention for perceiving interaction region in indirectly-contact hoi detection[[Paper]](https://ieeexplore.ieee.org/abstract/document/10415065)
-
+</details>
 ---
-## Foundation models methods
+
+<details>
+<summary>## Foundation models methods</summary>
 
 LLM (large language models) has rich semantic knowledge. It acquires a lot of language knowledge through pre-training and provides text descriptions for HOI detection, which helps to understand the semantics of the interaction. GPT has strong zero-shot and few-shot learning capabilities. It can learn and reason without or with only a small amount of specific data, which is particularly important for solving the long-tail distribution problems. At the same time, GPT also has generative capabilities and can generate natural language descriptions to enhance the understanding of interactions. 
 
@@ -134,45 +129,19 @@ VLM (visual language models), such as BLIP-2 and CLIP, has strong cross-modal le
 
 The combination of LLM and VLM can provide richer interpretability and higher accuracy for HOI detection. It can not only intuitively display the interaction relationship, but also perform well in dealing with complex scenes and rare interaction relationships, and is better than zero-shot/few-shot learning, compositional learning, and weakly-supervised learning methods in dealing with the long-tail distribution problems.
 
-The test results of the foundation model methods on the V-COCO and HICO-DET datasets are presented below.
-<p align="center"><img width="90%" src="pics/fig_table_foundation.png" /></p>
-The indexes of all papers in the image are shown below, and the citation numbers at the beginning of the papers are the same as those in the image.
-
-- [21] Zero-shot learning:Scaling human-object interaction recognition through zero-shot learning[[Paper]](https://ieeexplore.ieee.org/document/8354279)
-- [26] No-frills:No-frills human-object interaction detection: Factorization, layout encodings, and training techniques[[Paper]](https://openaccess.thecvf.com/content_ICCV_2019/html/Gupta_No-Frills_Human-Object_Interaction_Detection_Factorization_Layout_Encodings_and_Training_Techniques_ICCV_2019_paper.html)
-- [157] TIN:Transferable interactiveness knowledge for human-object interaction detection[[Paper]](https://openaccess.thecvf.com/content_CVPR_2019/html/Li_Transferable_Interactiveness_Knowledge_for_Human-Object_Interaction_Detection_CVPR_2019_paper.html)
-- [156] Hotspot:Grounded human-object interaction hotspots from video[[Paper]](https://openaccess.thecvf.com/content_ICCV_2019/html/Nagarajan_Grounded_Human-Object_Interaction_Hotspots_From_Video_ICCV_2019_paper.html)
-- [147] FG:Detecting human-object interactions via functional generalization[[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/6616)
-- [154] Weakly:Explanation-based weakly-supervised learning of visual relations with graph networks[[Paper]](https://link.springer.com/chapter/10.1007/978-3-030-58604-1_37)
-- [64] VCL:Visual compositional learning for human-object interaction detection[[Paper]](https://link.springer.com/chapter/10.1007/978-3-030-58555-6_35)
-- [158] ACPs:Detecting human-object interactions with action co-occurrence priors[[Paper]](https://link.springer.com/chapter/10.1007/978-3-030-58589-1_43)
-- [144] HO-RPN:Discovering human interactions with novel objects via zero-shot learning[[Paper]](https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_Discovering_Human_Interactions_With_Novel_Objects_via_Zero-Shot_Learning_CVPR_2020_paper.html)
-- [143] Rb-PaStaNet:Rb-pastanet: A few-shot human-object interaction detection based on rules and part states[[Paper]](https://arxiv.org/abs/2008.06285)
-- [148] ConsNet:Consnet: Learning consistency graph for zero-shot human-object interaction detection[[Paper]](https://dl.acm.org/doi/abs/10.1145/3394171.3413600)
-- [146] DGIG-Net:Dgig-net: Dynamic graph-in-graph networks for few-shot human-object interaction[[Paper]](https://ieeexplore.ieee.org/abstract/document/9352497)
-- [63] FCL:Detecting human-object interaction via fabricated compositional learning[[Paper]](https://openaccess.thecvf.com/content/CVPR2021/html/Hou_Detecting_Human-Object_Interaction_via_Fabricated_Compositional_Learning_CVPR_2021_paper.html)
-- [155] Mixed Supervision:Detecting human-object interaction with mixed supervision[[Paper]](https://openaccess.thecvf.com/content/WACV2021/html/Kumaraswamy_Detecting_Human-Object_Interaction_With_Mixed_Supervision_WACV_2021_paper.html)
-- [150] ATL:Affordance transfer learning for human-object interaction detection[[Paper]](https://openaccess.thecvf.com/content/CVPR2021/html/Hou_Affordance_Transfer_Learning_for_Human-Object_Interaction_Detection_CVPR_2021_paper.html)
-- [151] ICompass:Interaction compass: Multi-label zero-shot learning of human-object interactions via spatial relations[[Paper]](https://openaccess.thecvf.com/content/ICCV2021/html/Huynh_Interaction_Compass_Multi-Label_Zero-Shot_Learning_of_Human-Object_Interactions_via_Spatial_ICCV_2021_paper.html)
-- [122] SAPNet:Distillation using oracle queries for transformer-based human-object interaction detection[[Paper]](https://openaccess.thecvf.com/content/CVPR2022/html/Qu_Distillation_Using_Oracle_Queries_for_Transformer-Based_Human-Object_Interaction_Detection_CVPR_2022_paper.html)
-- [152] Bongard-HOI:Bongard-hoi: Benchmarking few-shot visual reasoning for human-object interactions[[Paper]](https://openaccess.thecvf.com/content/CVPR2022/html/Jiang_Bongard-HOI_Benchmarking_Few-Shot_Visual_Reasoning_for_Human-Object_Interactions_CVPR_2022_paper.html)
 - [160] GEN-VLKT:Gen-vlkt: Simplify association and enhance interaction understanding for hoi detection[[Paper]](https://openaccess.thecvf.com/content/CVPR2022/html/Liao_GEN-VLKT_Simplify_Association_and_Enhance_Interaction_Understanding_for_HOI_Detection_CVPR_2022_paper.html)
-- [153] SCL:Discovering human-object interaction concepts via self-compositional learning[[Paper]](https://link.springer.com/chapter/10.1007/978-3-031-19812-0_27)
-- [149] OC-Immunity:Highlighting object category immunity for the generalization of human-object interaction detection[[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/20075)
 - [163] Weakly-HOI:Weakly-supervised hoi detection via prior-guided bi-level representation learning[[Paper]](https://arxiv.org/abs/2303.01313)
 - [162] HOICLIP:Hoiclip: Efficient knowledge transfer for hoi detection with vision-language models[[Paper]](https://openaccess.thecvf.com/content/CVPR2023/html/Ning_HOICLIP_Efficient_Knowledge_Transfer_for_HOI_Detection_With_Vision-Language_Models_CVPR_2023_paper.html)
 - [165] Interaction Labels Only:Weakly-supervised hoi detection from interaction labels only and language/vision-language priors[[Paper]](https://arxiv.org/abs/2303.05546)
 - [161] EoID:End-to-end zero-shot hoi detection via vision and language knowledge distillation[[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/25385)
 - [164] HOI with CLIP:Exploiting clip for zero-shot hoi detection requires knowledge distillation at multiple levels[[Paper]](https://openaccess.thecvf.com/content/WACV2024/html/Wan_Exploiting_CLIP_for_Zero-Shot_HOI_Detection_Requires_Knowledge_Distillation_at_WACV_2024_paper.html)
-- [145] HOICS:Hoics: Zero-shot hoi detection via compatibility self-learning[[Paper]](https://ieeexplore.ieee.org/abstract/document/10446999)
-- [159] Dual:Dual-prior augmented decoding network for long tail distribution in hoi detection[[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/27949)
 - [174] CLIP4HOI:Clip4hoi: Towards adapting clip for practical zero-shot hoi detection[[Paper]](https://proceedings.neurips.cc/paper_files/paper/2023/hash/8fd5bc08e744fe0dfe798c61d1575a22-Abstract-Conference.html)
 - [177] ContextHOI:Contextual human object interaction understanding from pre-trained large language model[[Paper]](https://ieeexplore.ieee.org/abstract/document/10447511)
 - [176] label-uncertain:Few-shot learning from augmented label-uncertain queries in bongard-hoi[[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/28079)
 - [175] UniHOI:Detecting any human-object interaction relationship: Universal hoi detector with spatial prompt learning on foundation models[[Paper]](https://proceedings.neurips.cc/paper_files/paper/2023/hash/02687e7b22abc64e651be8da74ec610e-Abstract-Conference.html)
 - [178] CMD-SE:Exploring the potential of large foundation models for open-vocabulary hoi detection[[Paper]](https://openaccess.thecvf.com/content/CVPR2024/html/Lei_Exploring_the_Potential_of_Large_Foundation_Models_for_Open-Vocabulary_HOI_CVPR_2024_paper.html)
 - [179] KI2HOI:Towards zero-shot human-object interaction detection via vision-language integration[[Paper]](https://arxiv.org/abs/2403.07246)
-
+</details>
 ---
 
 If you find this repository helpful, please consider citing:
