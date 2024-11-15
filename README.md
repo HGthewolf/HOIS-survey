@@ -3,16 +3,7 @@
 > [A Survey of Human-object Interaction Detection with Deep Learning]() <br>
 > [![paper](A_Survey_of_Human-object_Interaction_Detection_with Deep_Learning.pdf)]
 
-If you find this repository helpful, please consider citing:
 
-```BibTeX
-@article{yang2023humanparsing,
-  title={Deep Learning Technique for Human Parsing: A Survey and Outlook},
-  author={Lu Yang and Wenhe Jia and Shan Li and Qing Song},
-  journal={arXiv preprint arXiv:2301.00394},
-  year={2023}
-}
-```
 
 ---
 ## Contributing 
@@ -28,18 +19,11 @@ Compared with the currently published HOI detection review papers, our contribut
 ---
 ## Contents
 
-  - [Introduction](#Introduction)
   - [Overview of HOI detection](#Overview-of-HOI-detection)
   - [Two-stage methods](#Two-stage-methods)
   - [One-stage methods](#One-stage-methods)
   - [Transformer-based methods](#Transformer-based-methods)
   - [Foundation models methods](#Foundation-models-methods)
-  - [Datasets](#Datasets)
-  - [Future directions](#Future-directions)
-
----
-## Introduction
-Human-object interaction (HOI) detection has attracted significant attention due to its wide applications, including human-robot interactions, security monitoring, automatic sports commentary, etc. HOI detection aims to detect humans, objects, and their interactions in a given image or video, so it needs a higher-level semantic understanding of the image than regular object recognition or detection tasks. It is also more challenging technically because of some unique difficulties, such as multi-object interactions, long-tail distribution of interaction categories, etc. Currently, deep learning methods have achieved great performance in HOI detection, but there are few reviews describing the recent advance of deep learning-based HOI detection. Moreover, the current stage-based category of HOI detection methods is causing confusion in community discussion and beginner learning. To fill this gap, this paper summarizes, categorizes, and compares methods using deep learning for HOI detection over the last nine years. Firstly, we summarize the pipeline of HOI detection methods. Then, we divide existing methods into three categories (two-stage, one-stage, and transformer-based), distinguish them in formulas and schematics, and qualitatively compare their advantages and disadvantages. After that, we review each category of methods in detail, focusing on HOI detection methods for images. Moreover, we explore the development process of using foundation models for HOI detection. We also quantitatively compare the performance of existing methods on public HOI datasets. At last, we point out the future research direction of HOI detection.
 
 ---
 ## Overview of HOI detection
@@ -257,53 +241,16 @@ The indexes of all papers in the image are shown below, and the citation numbers
 - [179] KI2HOI:Towards zero-shot human-object interaction detection via vision-language integration[[Paper]](https://arxiv.org/abs/2403.07246)
 
 ---
-## Dataset
-In this section, we summarize the information of popular HOI detection datasets, as shown in table below. From 2015 to 2024, a total of 13 datasets for HOI detection emerged, including HICO, V-COCO, HICO-DET, HCVRD, HOI-A, HAKE, Ambiguous-HOI, HOI-VP, SWiG-HOI, BEHAVE, HAKE-HOI, HOI-SDC, and HOT.
 
-<p align="center"><img width="90%" src="pics/fig_table_datasets.png" /></p>
+If you find this repository helpful, please consider citing:
 
-
-The indexes of all papers in the table are shown below, and the citation numbers at the beginning of the papers are the same as those in the table.
-
-- [166] V-COCO:Visual semantic role labeling[[Paper]](https://arxiv.org/abs/1505.04474)
-- [167] HICO:HICO: A Benchmark for Recognizing Human-Object Interactions in Images[[Paper]](https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Chao_HICO_A_Benchmark_ICCV_2015_paper.html)
-- [73] HICO-DET:Learning to detect human-object interactions[[Paper]](https://ieeexplore.ieee.org/abstract/document/8354152)
-- [168] HCVRD:Hcvrd: A benchmark for large-scale human-centered visual relationship detection[[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/12260)
-- [33] HOI-A:Ppdm: Parallel point detection and matching for real-time human-object interaction detection[[Paper]](https://openaccess.thecvf.com/content_CVPR_2020/html/Liao_PPDM_Parallel_Point_Detection_and_Matching_for_Real-Time_Human-Object_Interaction_CVPR_2020_paper.html)
-- [169] HAKE:Hake: Human activity knowledge engine[[Paper]](https://arxiv.org/abs/1904.06539)
-- [170] Ambiguous-HOI:Detailed 2d-3d joint representation for human-object interaction[[Paper]](https://openaccess.thecvf.com/content_CVPR_2020/html/Li_Detailed_2D-3D_Joint_Representation_for_Human-Object_Interaction_CVPR_2020_paper.html)
-- [87] HOI-VP:Polysemy deciphering network for robust human–object interaction detection[[Paper]](https://link.springer.com/article/10.1007/s11263-021-01458-8)
-- [120] SWiG-HOI:Discovering human interactions with large-vocabulary objects via query and multi-scale detection[[Paper]](https://openaccess.thecvf.com/content/ICCV2021/html/Wang_Discovering_Human_Interactions_With_Large-Vocabulary_Objects_via_Query_and_Multi-Scale_ICCV_2021_paper.html)
-- [171] BEHAVE:Behave: Dataset and method for tracking human object interactions[[Paper]](https://openaccess.thecvf.com/content/CVPR2022/html/Bhatnagar_BEHAVE_Dataset_and_Method_for_Tracking_Human_Object_Interactions_CVPR_2022_paper.html)
-- [172] HAKE-HOI:Transferable interactiveness knowledge for human-object interaction detection[[Paper]](https://arxiv.org/pdf/2101.10292v1)
-- [124] HOI-SDC:Fgahoi: Fine-grained anchors for human-object interaction detection[[Paper]](https://ieeexplore.ieee.org/abstract/document/10315071)
-- [173] HOT:Detecting human-object contact in images[[Paper]](https://openaccess.thecvf.com/content/CVPR2023/html/Chen_Detecting_Human-Object_Contact_in_Images_CVPR_2023_paper.html)
-
----
-## Future Directions
-Deep learning-based HOI detection methods are still in development, and there are many difficulties that need to be explored and solved. Future research can be carried out from the following aspects.
-
-### (1) Domain adaptations for various scenes. 
-
-The future HOI detection algorithm should be both general and professional. Generality refers to the ability to apply models trained on existing data to unseen scenarios. Professional refers to the ability to train models for specific usage scenarios based on existing data. Domain adaptations can effectively reduce the dependence on labeled training data [188, 189]. At present, the most advanced research directions in this area are few-shot and zero-shot learning, both of which are the application of Meta-Learning in the field of supervised learning. The two hope that the machine learning model can quickly learn new categories with only a small number of samples or zero samples. At present, some early work has begun to explore their application value in the field of HOI detection.
-
-### (2) Transformer models are getting increasing attention. 
-
-Transformer’s advantages of global computing and perfect memory make it popular in the machine-learning community. As we mentioned above, the transformer-based methods are slightly more efficient than the one-stage methods in grouping results and interaction classification, and they are also better than the two-stage methods in terms of real-time and accuracy performance. We can find that transformer-based HOI detection methods have become the main research direction in 2024 and they are likely to get more attention in the future. At present, transformer-based methods still face difficulties such as long convergence time, poor interpretability, high computational complexity, weak deployment ability in natural environments, and substantial memory needed for model computation. In the future, further research can be conducted on optimizing decoder computing power, mining more interaction information between human pose and contact environment, extracting features from objects that are too small in images, simplifying configuration parameters and fine-tuning processes, and enhancing real-time application performance and generalization performance.
-
-### (3) Foundation models to solve the long-tail distribution problem. 
-
-Nowadays, the popularity of ChatGPT has caused more and more researchers to focus on the foundation models. In the field of HOI detection, there have been some articles using the foundation models, such as CLIP, GPT, and BLIP-2, to solve the long-tail distribution problem. The foundation models also perform excellently in solving problems such as excessive reliance on a large number of HOI text labels for classification, poor transferability, complex and diverse HOIs in the real world, poor ability to understand contextual information, and weak comprehensive reasoning ability in previous HOI detection methods. It is conceivable that with the further development of foundation models, more researchers will try to use foundation models to optimize existing HOI detection methods. In the future, further research can be conducted through foundation models to generate and capture uncommon interactions in the long-tail distribution problem, enhance the interaction interpretation and language understanding of complex HOIs using prior knowledge, enhance contextual context and zero-shot reasoning ability, and generate human body part state descriptions using the extensive world knowledge.
-
-### (4) More comprehensive and professional datasets. 
-
-The existing mainstream datasets all have room for further optimization. For example, in V-COCO, the number of instance samples between different categories is unbalanced, which will cause long-tail distribution. At the same time, there is also the problem that the interaction categories are not comprehensive. Although the current largest dataset HCVRD has 9852 behavior categories, it still cannot cover the relationship category between all humans and objects. In addition, datasets with more professional characteristics also have research value. Extracting synthetic data from games is also an excellent way to augment the dataset.
-
-### (5) Multi-modal optimizes HOI detection performance. 
-
-In recent years, multi-modal fusion target detection has become a new direction to solve problems such as the poor performance of traditional target detection in complex environments. Similarly, multi-modal fusion can also use information from different modalities to more comprehensively capture interactive information, further improving the robustness, accuracy and versatility of the HOI detection model. In addition to traditional visual information, the available modal information can also be obtained from sensor, radar, LiDAR, sound, 3D pose and mesh reconstruction, etc.
-
-### (6) Beyond HOI detection: HOI generation. 
-
-In the HOI motion generation field, various innovative methods have emerged in recent years. These methods aim to simulate and generate HOI motions that conform to real physical rules and semantic logic based on the characteristics of scenes, text or objects. Combining physical simulation, reinforcement learning, modular design, and deep learning technologies makes the HOI motion generation more natural, accurate, and widely applicable. These research results provide strong support for virtual reality (VR), augmented reality (AR), and human-machine interaction (HMI).
-
+```BibTeX
+@misc{han2024hoidetection,
+  author    = {Geng Han and Jiachen Zhao and Lele Zhang and Fang Deng},
+  title     = {A Survey of Human-object Interaction Detection with Deep Learning},
+  year      = {2024},
+  month     = {July},
+  note      = {Status: Unpublished},
+  howpublished = {Submitted for publication},
+}
+```
