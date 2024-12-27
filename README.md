@@ -1,6 +1,5 @@
 # A Survey of Human-object Interaction Detection with Deep Learning
 
-> [A Survey of Human-object Interaction Detection with Deep Learning]() <br>
 > [[Paper]](https://ieeexplore.ieee.org/document/10816567)
 
 ---
