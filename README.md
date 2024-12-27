@@ -1,7 +1,7 @@
 # A Survey of Human-object Interaction Detection with Deep Learning
 
 > [A Survey of Human-object Interaction Detection with Deep Learning]() <br>
-> [![paper](A_Survey_of_Human-object_Interaction_Detection_with Deep_Learning.pdf)]
+> [![paper](A_Survey_of_Human-object_Interaction_Detection_with_Deep_Learning.pdf)]
 
 ---
 
