@@ -3,6 +3,22 @@
 > [A Survey of Human-object Interaction Detection with Deep Learning]() <br>
 > [![paper](A_Survey_of_Human-object_Interaction_Detection_with Deep_Learning.pdf)]
 
+---
+
+If you find this repository helpful, please consider citing:
+
+```BibTeX
+@ARTICLE{10816567,
+  author={Han, Geng and Zhao, Jiachen and Zhang, Lele and Deng, Fang},
+  journal={IEEE Transactions on Emerging Topics in Computational Intelligence}, 
+  title={A Survey of Human-Object Interaction Detection With Deep Learning}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1-24},
+  keywords={Transformers;Feature extraction;Reviews;Foundation models;Visualization;Object recognition;Pipelines;Surveys;Semantics;Heavily-tailed distribution;Deep learning;visual relationship detection;human-object interaction;foundation models;attention mechanism;GNN;transformer},
+  doi={10.1109/TETCI.2024.3518613}}
+```
 
 
 ---
@@ -142,17 +158,3 @@ The combination of LLM and VLM can provide richer interpretability and higher ac
 - [178] CMD-SE:Exploring the potential of large foundation models for open-vocabulary hoi detection[[Paper]](https://openaccess.thecvf.com/content/CVPR2024/html/Lei_Exploring_the_Potential_of_Large_Foundation_Models_for_Open-Vocabulary_HOI_CVPR_2024_paper.html)
 - [179] KI2HOI:Towards zero-shot human-object interaction detection via vision-language integration[[Paper]](https://arxiv.org/abs/2403.07246)
 </details>
----
-
-If you find this repository helpful, please consider citing:
-
-```BibTeX
-@misc{han2024hoidetection,
-  author    = {Geng Han and Jiachen Zhao and Lele Zhang and Fang Deng},
-  title     = {A Survey of Human-object Interaction Detection with Deep Learning},
-  year      = {2024},
-  month     = {July},
-  note      = {Status: Unpublished},
-  howpublished = {Submitted for publication},
-}
-```
